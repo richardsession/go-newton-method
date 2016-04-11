@@ -1,26 +1,26 @@
 package main
 
 import (
-	"fmt"
-	"math"
+    "fmt"
+    "math"
 )
 
 func Sqrt(x float64) float64 {
-	// Starting point
-	var temp float64 = x / 2
-	var z float64
+    var sqrt float64
+    var temp float64 = x / 2   // Initial Seed
+    var threshold float64 = 0.0000001
 	
 	for i := 0; i < 10; i++ {
-		z = temp - ((temp * temp - x)/(2 * temp))
+		sqrt = temp - ((temp * temp - x)/(2 * temp))
 		
-		if (temp - z) < 0.0000001 {
-			return z
+		if (temp - sqrt) < threshold {
+			return sqrt
 		}
 		
-		temp = z
+		temp = sqrt
 	}
 	
-	return z
+	return sqrt
 }
 
 func main() {
