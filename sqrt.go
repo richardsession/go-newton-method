@@ -1,9 +1,6 @@
 package main
 
-import (
-    "fmt"
-    "math"
-)
+import "fmt"
 
 func Sqrt(x float64) float64 {
     var sqrt float64
